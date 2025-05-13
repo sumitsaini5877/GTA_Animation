@@ -73,14 +73,19 @@ function App() {
     const main = document.querySelector(".main");
     main?.addEventListener("mousemove", function (e) {
       const xMove = (e.clientX / window.innerWidth - 0.5) * 40;
+      const yMove = (e.clientY / window.innerHeight - 0.5) * 40;
+
       gsap.to(".imagesdiv .text", {
         x: `${xMove * 0.4}%`,
+        
       });
       gsap.to(".sky", {
         x: `${xMove * 0.4}%`,
+        y:`${yMove*0.2}%`
       });
       gsap.to(".bg", {
         x: xMove * 1.7,
+        y:`${yMove*0.2}%`
       });
     });
   }, [showContent]);
